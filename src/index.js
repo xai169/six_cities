@@ -1,2 +1,12 @@
-const bodyElement = document.querySelector(`body`);
-bodyElement.textContent = `Hello, world!`;
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './components/app/app';
+
+const CARDS_COUNT = new Array(5).fill(1);
+
+ReactDOM.render(
+  <App
+    cards={CARDS_COUNT}
+  />,
+  document.querySelector(`#root`)
+);

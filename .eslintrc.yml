@@ -8,7 +8,7 @@ extends: ['htmlacademy/es6', 'plugin:react/recommended']
 parserOptions:
   ecmaFeatures:
     jsx: true
-  ecmaVersion: 2018
+  ecmaVersion: latest
   sourceType: module
 
 plugins: ['react']
