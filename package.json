@@ -16,7 +16,7 @@
     "babel-loader": "9.1.2",
     "css-loader": "6.7.3",
     "eslint": "8.38.0",
-    "eslint-config-htmlacademy": "9.0.0",
+    "eslint-config-htmlacademy": "2.1.0",
     "eslint-plugin-react": "7.34.1",
     "style-loader": "3.3.2",
     "webpack": "5.90.3",
@@ -29,6 +29,7 @@
   "dependencies": {
     "prop-types": "15.7.2",
     "react": "16.14.0",
-    "react-dom": "16.14.0"
+    "react-dom": "16.14.0",
+    "react-router-dom": "5.2.1"
   }
 }
