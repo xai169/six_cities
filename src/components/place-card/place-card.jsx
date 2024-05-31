@@ -1,10 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {PlaceCardTypes} from '../prop-types/place-card';
+import {RATING_STAR_WIDTH} from '../const';
+import {Link} from 'react-router-dom';
 
 const PlaceCard = (props) => {
   const {item, onMouseEnter, onMouseLeave} = props;
   const {id, isPremium, previewImage, price, isFavorite, rating, title, type} = item;
+
   const handleMouseEnter = () => {
     onMouseEnter(item);
   };
@@ -39,12 +42,12 @@ const PlaceCard = (props) => {
         </div>
         <div className="place-card__rating rating">
           <div className="place-card__stars rating__stars">
-            <span style={{width: Math.round(rating) * 20 + `%`}}></span>
+            <span style={{width: Math.round(rating) * RATING_STAR_WIDTH + `%`}}></span>
             <span className="visually-hidden">Rating</span>
           </div>
         </div>
         <h2 className="place-card__name">
-          <a href="#">{title}</a>
+          <Link to={`/offer/` + id}>{title}</Link>
         </h2>
         <p className="place-card__type">{type}</p>
       </div>

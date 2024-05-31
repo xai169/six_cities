@@ -13,12 +13,12 @@ export const Offers = [
     description: `A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.`,
     goods: [`Heating`, `Kitchen`, `Cable TV`, `Washing machine`, `Coffee machine`, `Dishwasher`],
     host: {
-      avatarUrl: `img/1.png`,
+      avatarUrl: `img/avatar-max.jpg`,
       id: 3,
       isPro: true,
       name: `Angelina`
     },
-    images: [`img/1.png`, `img/2.png`],
+    images: [`img/apartment-02.jpg`, `img/apartment-02.jpg`, `img/apartment-02.jpg`, `img/apartment-02.jpg`, `img/apartment-02.jpg`, `img/apartment-02.jpg`],
     isFavorite: false,
     isPremium: true,
     location: {
@@ -47,12 +47,12 @@ export const Offers = [
     description: `A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.`,
     goods: [`Heating`, `Kitchen`, `Cable TV`, `Washing machine`, `Coffee machine`, `Dishwasher`],
     host: {
-      avatarUrl: `img/1.png`,
+      avatarUrl: `img/avatar-max.jpg`,
       id: 1,
       isPro: true,
       name: `Angelina`
     },
-    images: [`img/1.png`, `img/2.png`],
+    images: [`img/apartment-02.jpg`, `img/apartment-02.jpg`, `img/apartment-02.jpg`, `img/apartment-02.jpg`, `img/apartment-02.jpg`, `img/apartment-02.jpg`],
     isFavorite: false,
     isPremium: false,
     location: {
@@ -81,12 +81,12 @@ export const Offers = [
     description: `A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.`,
     goods: [`Heating`, `Kitchen`, `Cable TV`, `Washing machine`, `Coffee machine`, `Dishwasher`],
     host: {
-      avatarUrl: `img/1.png`,
+      avatarUrl: `img/avatar-angelina.jpg`,
       id: 3,
       isPro: true,
       name: `Angelina`
     },
-    images: [`img/1.png`, `img/2.png`],
+    images: [`img/apartment-02.jpg`, `img/apartment-02.jpg`, `img/apartment-02.jpg`, `img/apartment-02.jpg`, `img/apartment-02.jpg`, `img/apartment-02.jpg`],
     isFavorite: false,
     isPremium: false,
     location: {
@@ -115,12 +115,12 @@ export const Offers = [
     description: `A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.`,
     goods: [`Heating`, `Kitchen`, `Cable TV`, `Washing machine`, `Coffee machine`, `Dishwasher`],
     host: {
-      avatarUrl: `img/1.png`,
+      avatarUrl: `img/avatar-max.jpg`,
       id: 3,
       isPro: true,
       name: `Angelina`
     },
-    images: [`img/1.png`, `img/2.png`],
+    images: [`img/apartment-02.jpg`, `img/apartment-02.jpg`, `img/apartment-02.jpg`, `img/apartment-02.jpg`, `img/apartment-02.jpg`, `img/apartment-02.jpg`],
     isFavorite: false,
     isPremium: false,
     location: {
@@ -199,7 +199,7 @@ export const FavoritesOffers = [
         previewImage: `img/room.jpg`,
         price: 80,
         isFavorite: true,
-        isPremium: false,
+        isPremium: true,
         rating: 4,
         location: {
           latitude: 52.35514938496378,
@@ -218,37 +218,37 @@ export const FavoritesOffers = [
     items: [
       {
         id: 4,
-        bedrooms: 3,
+        bedrooms: 8,
         city: {
           location: {
             latitude: 52.370216,
             longitude: 4.895168,
-            zoom: 10,
+            zoom: 10
           },
-          name: `Amsterdam`,
+          name: `Moscow`
         },
         description: `A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.`,
         goods: [`Heating`, `Kitchen`, `Cable TV`, `Washing machine`, `Coffee machine`, `Dishwasher`],
         host: {
-          avatarUrl: `img/avatar-angelina.jpg`,
+          avatarUrl: `img/1.png`,
           id: 3,
           isPro: true,
-          name: `Angelina`,
+          name: `Angelina`
         },
-        images: [`img/room.jpg`, `img/apartment-01.jpg`, `img/apartment-02.jpg`, `img/apartment-03.jpg`, `img/studio-01.jpg`, `img/apartment-01.jpg`],
-        previewImage: `img/room.jpg`,
-        price: 80,
-        isFavorite: true,
+        images: [`img/1.png`, `img/2.png`],
+        isFavorite: false,
         isPremium: false,
-        rating: 4,
         location: {
           latitude: 52.35514938496378,
           longitude: 4.673877537499948,
-          zoom: 8,
+          zoom: 8
         },
-        title: `Wood and stone place`,
         maxAdults: 4,
-        type: `Private room`,
+        previewImage: `img/apartment-03.jpg`,
+        price: 220,
+        rating: 0.8,
+        title: `Nice, cozy, warm big bed apartment`,
+        type: `apartment`
       },
     ]
   },
@@ -302,7 +302,7 @@ export const CitiesList = [
     name: `Dusseldorf`,
   },
 ];
-export const Reviewers = [
+export const Reviews = [
   {
     comment: `A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.`,
     date: `2019-05-08T14:13:56.569Z`,
