@@ -1,5 +1,5 @@
 import React from 'react';
-import PlaceCard from '../place-card/place-card';
+import OffersList from '../offers-list/offers-list';
 import PropTypes from 'prop-types';
 
 const MainPage = (props) => {
@@ -89,9 +89,7 @@ const MainPage = (props) => {
                 </ul>
               </form>
               <div className="cities__places-list places__list tabs__content">
-                {
-                  cards.map((card, i) => <PlaceCard key={card + i} />)
-                }
+                {<OffersList cards={cards}/>}
               </div>
             </section>
             <div className="cities__right-section">

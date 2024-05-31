@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {PlaceCardTypes} from '../prop-types/place-card';
 
-const PlaceCard = (props) => {
+const FavoritesCard = (props) => {
   const {item, onMouseEnter, onMouseLeave} = props;
   const {id, isPremium, previewImage, price, isFavorite, rating, title, type} = item;
   const handleMouseEnter = () => {
@@ -52,10 +52,10 @@ const PlaceCard = (props) => {
   );
 };
 
-PlaceCard.propTypes = {
+FavoritesCard.propTypes = {
   item: PlaceCardTypes.isRequired,
   onMouseEnter: PropTypes.func.isRequired,
   onMouseLeave: PropTypes.func.isRequired,
 };
 
-export default PlaceCard;
+export default FavoritesCard;
