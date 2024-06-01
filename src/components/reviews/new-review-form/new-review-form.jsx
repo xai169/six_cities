@@ -12,12 +12,18 @@ const NewReviewForm = () => {
   const handleReviewRatingChange = (evt) => {
     setReviewRating(evt.target.value);
   };
-  const [, setNewReview] = useState(null);
+
+  const [newReview, setNewReview] = useState({
+    text: null,
+    rating: null,
+  });
+
   const handleNewReviewSubmit = (evt) => {
     evt.preventDefault();
     setNewReview({
-      'message': reviewText,
-      'rating': reviewRating,
+      ...newReview,
+      text: reviewText,
+      rating: reviewRating,
     });
   };
 

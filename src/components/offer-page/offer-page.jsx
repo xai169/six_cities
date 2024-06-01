@@ -13,6 +13,9 @@ const OfferPage = (props) => {
   const id = Number(useParams().id);
   const offer = cards.find((card) => card.id === id);
   const {bedrooms, description, goods, host, images, isFavorite, isPremium, location, maxAdults, previewImage, price, rating, title, type} = offer;
+
+  const favoriteBookmark = isFavorite ? `property__bookmark-button--active` : ``;
+
   return (
     <div className="page">
       <header className="header">
@@ -54,7 +57,7 @@ const OfferPage = (props) => {
                 <h1 className="property__name">
                   {title}
                 </h1>
-                <button className="property__bookmark-button button" type="button">
+                <button className={`property__bookmark-button ${favoriteBookmark} button`} type="button">
                   <svg className="property__bookmark-icon" width="31" height="33">
                     <use xlinkHref="#icon-bookmark"></use>
                   </svg>
@@ -63,7 +66,7 @@ const OfferPage = (props) => {
               </div>
               <div className="property__rating rating">
                 <div className="property__stars rating__stars">
-                  <span style={{width: Math.round(rating) * RATING_STAR_WIDTH + `%`}}></span>
+                  <span style={{width: `${Math.round(rating) * RATING_STAR_WIDTH}%`}}></span>
                   <span className="visually-hidden">Rating</span>
                 </div>
                 <span className="property__rating-value rating__value">4.8</span>
