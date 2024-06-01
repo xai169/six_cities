@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import FavoritesCard from './favorites-card/favorites-card';
 import {Link} from 'react-router-dom';
+import {FavoriteCardTypes} from '../prop-types/favorite-card';
 
 const Favorites = (props) => {
   const {favoriteCards} = props;
@@ -75,7 +76,7 @@ const Favorites = (props) => {
 };
 
 Favorites.propTypes = {
-  favoriteCards: PropTypes.array.isRequired,
+  favoriteCards: PropTypes.arrayOf(FavoriteCardTypes).isRequired,
 };
 
 export default Favorites;

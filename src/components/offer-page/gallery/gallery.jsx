@@ -1,5 +1,5 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 const Gallery = (props) => {
   const {images} = props;
@@ -17,6 +17,10 @@ const Gallery = (props) => {
       }
     </div>
   );
+};
+
+Gallery.propTypes = {
+  images: PropTypes.array.isRequired,
 };
 
 export default Gallery;

@@ -1,6 +1,7 @@
 import React, {useCallback, useState} from 'react';
 import PlaceCard from '../place-card/place-card';
 import PropTypes from 'prop-types';
+import {PlaceCardTypes} from '../prop-types/place-card';
 
 const OffersList = (props) => {
   const {cards} = props;
@@ -28,7 +29,7 @@ const OffersList = (props) => {
 };
 
 OffersList.propTypes = {
-  cards: PropTypes.array.isRequired,
+  cards: PropTypes.arrayOf(PlaceCardTypes).isRequired,
 };
 
 export default OffersList;

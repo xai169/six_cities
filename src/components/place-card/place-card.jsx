@@ -56,7 +56,7 @@ const PlaceCard = (props) => {
 };
 
 PlaceCard.propTypes = {
-  item: PlaceCardTypes.isRequired,
+  item: PlaceCardTypes,
   onMouseEnter: PropTypes.func.isRequired,
   onMouseLeave: PropTypes.func.isRequired,
 };

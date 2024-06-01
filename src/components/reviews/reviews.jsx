@@ -1,7 +1,8 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import ReviewItem from './review-item/review-item';
 import NewReviewForm from './new-review-form/new-review-form';
+import {ReviewTypes} from '../prop-types/review';
 
 const Reviews = (props) => {
   const {reviews} = props;
@@ -24,6 +25,10 @@ const Reviews = (props) => {
       </section>
     </>
   );
+};
+
+Reviews.propTypes = {
+  reviews: PropTypes.arrayOf(ReviewTypes).isRequired,
 };
 
 export default Reviews;

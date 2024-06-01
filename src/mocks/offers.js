@@ -140,7 +140,7 @@ export const Offers = [
 export const FavoritesOffers = [
   {
     city: `Amsterdam`,
-    id: `11`,
+    id: 11,
     items: [
       {
         id: 2,
@@ -214,7 +214,7 @@ export const FavoritesOffers = [
   },
   {
     city: `Cologne`,
-    id: `22`,
+    id: 22,
     items: [
       {
         id: 4,

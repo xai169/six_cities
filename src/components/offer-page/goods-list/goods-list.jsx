@@ -1,5 +1,5 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 const GoodsList = (props) => {
   const {goods} = props;
@@ -17,6 +17,10 @@ const GoodsList = (props) => {
       }
     </ul>
   );
+};
+
+GoodsList.propTypes = {
+  goods: PropTypes.array.isRequired,
 };
 
 export default GoodsList;

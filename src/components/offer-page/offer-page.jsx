@@ -1,10 +1,12 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import Reviews from '../reviews/reviews';
 import GoodsList from './goods-list/goods-list';
 import Gallery from './gallery/gallery';
 import {useParams, Link} from 'react-router-dom';
 import {RATING_STAR_WIDTH} from '../const';
+import {PlaceCardTypes} from '../prop-types/place-card';
+import {ReviewTypes} from '../prop-types/review';
 
 const OfferPage = (props) => {
   const {reviews, cards} = props;
@@ -218,6 +220,11 @@ const OfferPage = (props) => {
       </main>
     </div>
   );
+};
+
+OfferPage.propTypes = {
+  reviews: PropTypes.arrayOf(ReviewTypes).isRequired,
+  cards: PropTypes.arrayOf(PlaceCardTypes).isRequired,
 };
 
 export default OfferPage;

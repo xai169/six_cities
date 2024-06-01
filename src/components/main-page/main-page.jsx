@@ -1,6 +1,7 @@
 import React from 'react';
 import OffersList from '../offers-list/offers-list';
 import PropTypes from 'prop-types';
+import {PlaceCardTypes} from '../prop-types/place-card';
 
 const MainPage = (props) => {
   const {cards} = props;
@@ -103,7 +104,7 @@ const MainPage = (props) => {
 };
 
 MainPage.propTypes = {
-  cards: PropTypes.array.isRequired
+  cards: PropTypes.arrayOf(PlaceCardTypes).isRequired
 };
 
 export default MainPage;

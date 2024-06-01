@@ -1,6 +1,7 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import {RATING_STAR_WIDTH} from '../../const';
+import {ReviewTypes} from '../../prop-types/review';
 
 const ReviewItem = (props) => {
   const {reviewItem} = props;
@@ -31,6 +32,10 @@ const ReviewItem = (props) => {
       </li>
     </>
   );
+};
+
+ReviewItem.propTypes = {
+  reviewItem: PropTypes.objectOf(ReviewTypes).isRequired,
 };
 
 export default ReviewItem;
