@@ -26,7 +26,11 @@ const App = (props) => {
           <Login />
         </Route>
         <Route exact path="/offer/:id">
-          <OfferPage reviews={reviews} cards={cards}/>
+          <OfferPage
+            reviews={reviews}
+            cards={cards}
+            neighbourslist={cards.slice(0, 3)}
+          />
         </Route>
         <Route>
           <NotFound />
