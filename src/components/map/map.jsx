@@ -3,8 +3,10 @@ import PropTypes from 'prop-types';
 import {PlaceCardTypes} from '../prop-types/place-card';
 import leaflet from 'leaflet';
 import "leaflet/dist/leaflet.css";
+import {connect} from 'react-redux';
 
-const Map = ({cards}) => {
+const Map = (props) => {
+  const {offers} = props;
   const mapRef = useRef();
 
   useEffect(() => {
@@ -23,7 +25,7 @@ const Map = ({cards}) => {
       .addTo(mapRef.current);
 
 
-    cards.forEach((card) => {
+    offers.forEach((card) => {
       const customIcon = leaflet.icon({
         iconUrl: `./img/pin.svg`,
         iconSize: [27, 39]
@@ -43,15 +45,22 @@ const Map = ({cards}) => {
     return () => {
       mapRef.current.remove();
     };
-  }, []);
+  }, [offers]);
 
   return (
-    <div id="map" style={{height: `100%`}} ref={mapRef}></div>
+    <>
+      <div id="map" style={{height: `100%`}}></div>
+    </>
   );
 };
 
 Map.propTypes = {
-  cards: PropTypes.arrayOf(PlaceCardTypes).isRequired
+  offers: PropTypes.arrayOf(PlaceCardTypes).isRequired
 };
 
-export default Map;
+const mapStateToProps = (state) => ({
+  city: state.city,
+  offers: state.offers,
+});
+
+export default connect(mapStateToProps, null)(Map);

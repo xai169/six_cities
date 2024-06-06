@@ -11,13 +11,17 @@ import {ReviewTypes} from '../prop-types/review';
 import {FavoriteCardTypes} from '../prop-types/favorite-card';
 
 const App = (props) => {
-  const {cards, favoriteCards, reviews} = props;
+  const {cards, favoriteCards, reviews, citiesList, sort} = props;
 
   return (
     <BrowserRouter>
       <Switch>
         <Route exact path="/">
-          <MainPage cards={cards} />
+          <MainPage
+            cards={cards}
+            citiesList={citiesList}
+            sortingList={sort}
+          />
         </Route>
         <Route exact path="/favorites">
           <Favorites favoriteCards={favoriteCards}/>

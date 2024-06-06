@@ -1,13 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/App/app';
-import {Offers, FavoritesOffers, Reviews} from './mocks/offers';
+import {createStore} from "redux";
+import {Provider} from "react-redux";
+import {composeWithDevTools} from "redux-devtools-extension";
+import {reducer} from "./store/reducer";
+import {Offers, FavoritesOffers, Reviews, CitiesList, Sort} from './mocks/offers';
+
+const store = createStore(reducer, composeWithDevTools());
 
 ReactDOM.render(
-    <App
-      cards={Offers}
-      favoriteCards={FavoritesOffers}
-      reviews={Reviews}
-    />,
+    <Provider store={store}>
+      <App
+        cards={Offers}
+        favoriteCards={FavoritesOffers}
+        reviews={Reviews}
+        citiesList={CitiesList}
+        sort={Sort}
+      />
+    </Provider>,
     document.querySelector(`#root`)
 );
