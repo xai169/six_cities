@@ -360,50 +360,10 @@ export const Username = `zxcghoul@mail.sru`;
 
 export const MainTitle = `228 places to stay in Amsterdam`;
 
-export const Sort = [
-  {
-    label: `Popular`,
-    value: `popular`,
-  },
-  {
-    label: `Price: low to high`,
-    value: `asc_price`,
-  },
-  {
-    label: `Price: high to low`,
-    value: `desc_price`,
-  },
-  {
-    label: `Top rated first`,
-    value: `top`,
-  },
-];
-export const CitiesList = [
-  {
-    id: `111`,
-    name: `Paris`,
-  },
-  {
-    id: `222`,
-    name: `Cologne`,
-  },
-  {
-    id: `333`,
-    name: `Brussels`,
-  },
-  {
-    id: `444`,
-    name: `Amsterdam`,
-  },
-  {
-    id: `555`,
-    name: `Hamburg`,
-  },
-  {
-    id: `666`,
-    name: `Dusseldorf`,
-  },
-];
+export const Sort = [`Popular`, `Price: low to high`, `Price: high to low`, `Top rated first`];
+
+export const CitiesList = [`Paris`, `Cologne`, `Brussels`, `Amsterdam`, `Hamburg`, `Dusseldorf`];
+
 export const Reviews = [
   {
     comment: `A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.`,

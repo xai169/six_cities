@@ -1,6 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {ActionCreator} from '../../store/action';
+import PropTypes from 'prop-types';
 
 const CitiesList = (props) => {
   const {cities, onCitySelect, city} = props;
@@ -11,9 +12,9 @@ const CitiesList = (props) => {
       {
         cities.map((town) => {
           return (
-            <li className="locations__item" key={town.id} onClick={() => onCitySelect(town.name)}>
-              <a className={`locations__item-link tabs__item ${city === town.name ? isActive : ``}`} href="#">
-                <span>{town.name}</span>
+            <li className="locations__item" key={`${town}`} onClick={() => onCitySelect(town)}>
+              <a className={`locations__item-link tabs__item ${city === town ? isActive : ``}`} href="#">
+                <span>{town}</span>
               </a>
             </li>
           );
@@ -35,6 +36,12 @@ const mapDispatchToProps = (dispatch) => {
       dispatch(ActionCreator.selectCity(city));
     },
   };
+};
+
+CitiesList.propTypes = {
+  cities: PropTypes.arrayOf(PropTypes.string).isRequired,
+  onCitySelect: PropTypes.func.isRequired,
+  city: PropTypes.string.isRequired,
 };
 
 export {CitiesList};

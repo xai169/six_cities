@@ -1,6 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {ActionCreator} from '../../store/action';
+import PropTypes from 'prop-types';
 
 const Sorting = (props) => {
   const {sortingList, sort, onSortSelect} = props;
@@ -15,17 +16,23 @@ const Sorting = (props) => {
           <use xlinkHref="#icon-arrow-select"></use>
         </svg>
       </span>
-      <ul className="places__options places__options--custom places__options--opened">
+      <ul className={`places__options places__options--custom places__options--opened`}>
         {
-          sortingList.map((it) => {
+          sortingList.map((sortingItem) => {
             return (
-              <li className="places__option" tabIndex="0" key={it.value} onClick={() => onSortSelect(it.label)}>{it.label}</li>
+              <li className={`places__option ${sortingItem === sort ? isActive : ``}`} tabIndex="0" key={sortingItem} onClick={() => onSortSelect(sortingItem)}>{sortingItem}</li>
             );
           })
         }
       </ul>
     </form>
   );
+};
+
+Sorting.propTypes = {
+  sortingList: PropTypes.arrayOf(PropTypes.string).isRequired,
+  onSortSelect: PropTypes.func.isRequired,
+  sort: PropTypes.string.isRequired,
 };
 
 const mapStateToProps = (state) => {

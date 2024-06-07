@@ -8,7 +8,7 @@ import {connect} from 'react-redux';
 import Sorting from '../sorting/sorting';
 
 const MainPage = (props) => {
-  const {cards, citiesList, offers, city, sortingList} = props;
+  const {citiesList, offers, city, sortingList} = props;
 
   return (
     <div className="page page--gray page--main">
@@ -51,12 +51,12 @@ const MainPage = (props) => {
               <b className="places__found">{offers.length} {offers.length === 1 ? `place` : `places`} to stay in {city}</b>
               {<Sorting sortingList={sortingList}/>}
               <div className="cities__places-list places__list tabs__content">
-                {<OffersList/>}
+                {<OffersList cards={offers}/>}
               </div>
             </section>
             <div className="cities__right-section">
               <section className="cities__map map">
-                {<Map/>}
+                {<Map cards={offers}/>}
               </section>
             </div>
           </div>
@@ -67,7 +67,10 @@ const MainPage = (props) => {
 };
 
 MainPage.propTypes = {
-  cards: PropTypes.arrayOf(PlaceCardTypes).isRequired
+  offers: PropTypes.arrayOf(PlaceCardTypes).isRequired,
+  citiesList: PropTypes.arrayOf(PropTypes.string).isRequired,
+  sortingList: PropTypes.arrayOf(PropTypes.string).isRequired,
+  city: PropTypes.string.isRequired,
 };
 
 const mapStateToProps = (state) => {

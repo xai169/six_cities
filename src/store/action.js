@@ -2,7 +2,8 @@ import {Offers} from '../mocks/offers';
 
 export const ActionType = {
   CHANGE_CITY: `ChangeCity`,
-  SORT_OFFERS: `SortOffers`
+  SORT_OFFERS: `SortOffers`,
+  ACTIVE_CARD: `ActiveCard`
 };
 
 export const ActionCreator = {
@@ -13,6 +14,10 @@ export const ActionCreator = {
   sortOffers: (sort) => ({
     type: ActionType.SORT_OFFERS,
     payload: sort,
+  }),
+  activeCard: (activeCard) => ({
+    type: ActionType.ACTIVE_CARD,
+    payload: activeCard,
   })
 };
 

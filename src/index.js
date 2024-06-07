@@ -16,7 +16,7 @@ ReactDOM.render(
         favoriteCards={FavoritesOffers}
         reviews={Reviews}
         citiesList={CitiesList}
-        sort={Sort}
+        sortingList={Sort}
       />
     </Provider>,
     document.querySelector(`#root`)

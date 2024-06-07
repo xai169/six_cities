@@ -3,16 +3,20 @@ import PropTypes from 'prop-types';
 import {PlaceCardTypes} from '../prop-types/place-card';
 import {RATING_STAR_WIDTH} from '../const';
 import {Link} from 'react-router-dom';
+import {connect} from 'react-redux';
+import {ActionCreator} from '../../store/action';
 
 const PlaceCard = (props) => {
-  const {item, onMouseEnter, onMouseLeave} = props;
+  const {item, onMouseEnter, onMouseLeave, onActiveCard} = props;
   const {id, isPremium, previewImage, price, isFavorite, rating, title, type} = item;
 
   const handleMouseEnter = () => {
     onMouseEnter(item);
+    onActiveCard(item);
   };
   const handleMouseLeave = () => {
     onMouseLeave(item);
+    onActiveCard({});
   };
   const favoriteBookmark = isFavorite ? `place-card__bookmark-button--active` : ``;
 
@@ -56,10 +60,20 @@ const PlaceCard = (props) => {
   );
 };
 
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onActiveCard(activeCard) {
+      dispatch(ActionCreator.activeCard(activeCard));
+    },
+  };
+};
+
 PlaceCard.propTypes = {
   item: PlaceCardTypes,
   onMouseEnter: PropTypes.func.isRequired,
   onMouseLeave: PropTypes.func.isRequired,
+  onActiveCard: PropTypes.func.isRequired,
 };
 
-export default PlaceCard;
+export {PlaceCard};
+export default connect(null, mapDispatchToProps)(PlaceCard);

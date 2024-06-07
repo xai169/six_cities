@@ -6,7 +6,7 @@ import "leaflet/dist/leaflet.css";
 import {connect} from 'react-redux';
 
 const Map = (props) => {
-  const {offers} = props;
+  const {cards, activeCard} = props;
   const mapRef = useRef();
 
   useEffect(() => {
@@ -25,9 +25,9 @@ const Map = (props) => {
       .addTo(mapRef.current);
 
 
-    offers.forEach((card) => {
+    cards.forEach((card) => {
       const customIcon = leaflet.icon({
-        iconUrl: `./img/pin.svg`,
+        iconUrl: card.id === activeCard.id ? `./img/pin-active.svg` : `./img/pin.svg`,
         iconSize: [27, 39]
       });
 
@@ -36,7 +36,7 @@ const Map = (props) => {
         lng: card.location.longitude
       },
       {
-        icon: customIcon
+        icon: customIcon,
       })
       .addTo(mapRef.current)
       .bindPopup(card.title);
@@ -45,7 +45,7 @@ const Map = (props) => {
     return () => {
       mapRef.current.remove();
     };
-  }, [offers]);
+  });
 
   return (
     <>
@@ -55,12 +55,14 @@ const Map = (props) => {
 };
 
 Map.propTypes = {
-  offers: PropTypes.arrayOf(PlaceCardTypes).isRequired
+  cards: PropTypes.arrayOf(PlaceCardTypes).isRequired,
+  activeCard: PropTypes.object.isRequired,
 };
 
 const mapStateToProps = (state) => ({
   city: state.city,
   offers: state.offers,
+  activeCard: state.activeCard,
 });
 
 export default connect(mapStateToProps, null)(Map);

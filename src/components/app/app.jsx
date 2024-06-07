@@ -11,7 +11,7 @@ import {ReviewTypes} from '../prop-types/review';
 import {FavoriteCardTypes} from '../prop-types/favorite-card';
 
 const App = (props) => {
-  const {cards, favoriteCards, reviews, citiesList, sort} = props;
+  const {cards, favoriteCards, reviews, citiesList, sortingList} = props;
 
   return (
     <BrowserRouter>
@@ -20,7 +20,7 @@ const App = (props) => {
           <MainPage
             cards={cards}
             citiesList={citiesList}
-            sortingList={sort}
+            sortingList={sortingList}
           />
         </Route>
         <Route exact path="/favorites">
@@ -48,6 +48,8 @@ App.propTypes = {
   cards: PropTypes.arrayOf(PlaceCardTypes).isRequired,
   reviews: PropTypes.arrayOf(ReviewTypes).isRequired,
   favoriteCards: PropTypes.arrayOf(FavoriteCardTypes).isRequired,
+  citiesList: PropTypes.arrayOf(PropTypes.string).isRequired,
+  sortingList: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
 export default App;
