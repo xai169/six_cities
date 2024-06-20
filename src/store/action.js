@@ -1,9 +1,9 @@
-import {Offers} from '../mocks/offers';
-
 export const ActionType = {
   CHANGE_CITY: `ChangeCity`,
   SORT_OFFERS: `SortOffers`,
-  ACTIVE_CARD: `ActiveCard`
+  ACTIVE_CARD: `ActiveCard`,
+  LOAD_OFFERS: `LoadOffers`,
+  REQUIRED_AUTHORIZATION: `requiredAuthorization`,
 };
 
 export const ActionCreator = {
@@ -18,6 +18,14 @@ export const ActionCreator = {
   activeCard: (activeCard) => ({
     type: ActionType.ACTIVE_CARD,
     payload: activeCard,
+  }),
+  loadOffers: (offers) => ({
+    type: ActionType.LOAD_OFFERS,
+    payload: offers,
+  }),
+  requireAuthorization: (status) => ({
+    type: ActionType.REQUIRED_AUTHORIZATION,
+    payload: status,
   })
 };
 
@@ -31,7 +39,7 @@ export const sortOffers = (offers, sortType, town) => {
 
   switch (sortType) {
     case `Popular`:
-      return Offers.filter((offer) => offer.city.name === town);
+      return offers.slice();
     case `Price: low to high`:
       return offers.slice().sort(compareOffer.priceToHigh);
     case `Price: high to low`:

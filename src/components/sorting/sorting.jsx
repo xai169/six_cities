@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {connect} from 'react-redux';
 import {ActionCreator} from '../../store/action';
 import PropTypes from 'prop-types';
@@ -6,9 +6,13 @@ import PropTypes from 'prop-types';
 const Sorting = (props) => {
   const {sortingList, sort, onSortSelect} = props;
   const isActive = `places__option--active`;
+  const [isSortingListShow, setSortingListShow] = useState(false);
+  const handleSortingListShow = () => {
+    setSortingListShow(!isSortingListShow);
+  };
 
   return (
-    <form className="places__sorting" action="#" method="get">
+    <form className="places__sorting" action="#" method="get" onClick={handleSortingListShow}>
       <span className="places__sorting-caption">Sort by</span>
       <span className="places__sorting-type" tabIndex="0">
         {sort}
@@ -16,7 +20,7 @@ const Sorting = (props) => {
           <use xlinkHref="#icon-arrow-select"></use>
         </svg>
       </span>
-      <ul className={`places__options places__options--custom places__options--opened`}>
+      <ul className={`places__options places__options--custom ${isSortingListShow ? `places__options--opened` : ``}`}>
         {
           sortingList.map((sortingItem) => {
             return (

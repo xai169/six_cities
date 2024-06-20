@@ -83,7 +83,7 @@ export const Offers = [
     host: {
       avatarUrl: `img/avatar-angelina.jpg`,
       id: 3,
-      isPro: true,
+      isPro: false,
       name: `Angelina`
     },
     images: [`img/apartment-02.jpg`, `img/apartment-02.jpg`, `img/apartment-02.jpg`, `img/apartment-02.jpg`, `img/apartment-02.jpg`, `img/apartment-02.jpg`],
@@ -397,7 +397,7 @@ export const Reviews = [
     user: {
       avatarUrl: `img/avatar-max.jpg`,
       id: 4,
-      isPro: true,
+      isPro: false,
       name: `Mox`,
     },
   },
@@ -409,7 +409,7 @@ export const Reviews = [
     user: {
       avatarUrl: `img/avatar-max.jpg`,
       id: 4,
-      isPro: true,
+      isPro: false,
       name: `Mix`,
     },
   },
